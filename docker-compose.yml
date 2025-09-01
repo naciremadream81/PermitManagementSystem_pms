@@ -50,9 +50,9 @@ services:
       - POSTGRES_PASSWORD=password
     volumes:
       - postgres_data:/var/lib/postgresql/data
-              - ./packages/api/prisma/migrations:/docker-entrypoint-initdb.d
-      ports:
-        - "5433:5432"
+      - ./packages/api/prisma/migrations:/docker-entrypoint-initdb.d
+    ports:
+      - "5433:5432"
     networks:
       - permit-network
 
